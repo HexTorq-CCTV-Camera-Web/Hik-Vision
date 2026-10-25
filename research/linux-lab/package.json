@@ -1,0 +1,13 @@
+{
+  "name": "hikvision-linux-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.9" },
+  "scripts": {
+    "probe": "node cli.mjs probe",
+    "login": "node cli.mjs login",
+    "test": "node --test test/*.test.mjs",
+    "check": "node --check cli.mjs && node --check lib/personal-client.mjs"
+  }
+}

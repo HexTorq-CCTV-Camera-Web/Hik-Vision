@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#14191f"><title>Hikvision / Windows viewer</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/responsive.css">
+  <script type="module" src="/auth.mjs"></script>
+</head>
+<body>
+  <div id="activity-status" class="activity-status" role="status" aria-live="polite"><i class="loading-spinner" aria-hidden="true"></i><span>Loading your workspace...</span></div>
+  <header class="topbar"><a href="/" class="brand"><span class="brand-icon" aria-hidden="true">&#9673;</span> CAMERA WORKSPACE <span class="version">WINDOWS / V2</span></a><nav id="workspace-nav" class="workspace-nav" aria-label="Workspace" hidden><a id="nav-cameras" href="#/">Cameras</a><a id="nav-recordings" href="#/recordings">Recordings <span id="nav-recordings-count" hidden>0</span></a><a id="nav-settings" href="#/settings">Settings</a></nav><details id="nav-account" class="nav-account" hidden>
+      <summary aria-label="Account management"><span class="nav-account-avatar" aria-hidden="true">H</span><span class="nav-account-copy"><strong>Hik-Connect</strong><small id="nav-account-status">Not connected</small></span><span class="nav-account-chevron" aria-hidden="true">&#8964;</span></summary>
+      <div class="nav-account-menu account-menu-v2">
+        <section class="account-profile-header">
+          <div class="account-profile-top"><span class="account-kicker">HIK-CONNECT ACCOUNT</span><span id="connection-badge" class="badge">Not connected</span></div>
+          <div class="account-profile" id="account" hidden><span class="profile-avatar" id="profile-initial" aria-hidden="true">H</span><div class="profile-identity"><strong id="account-name"></strong><small><i class="region-dot" aria-hidden="true"></i><span id="account-region"></span></small></div></div>
+          <div id="account-empty" class="account-empty-profile"><strong>Your cameras start here.</strong><p>Connect your Hik-Connect account.</p></div>
+        </section>
+        <section class="account-cloud-section" aria-label="Hik-Connect settings">
+          <div id="account-playback" class="account-access-status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3Zm-4 9 3 3 5-6"/></svg><div><strong id="playback-title">Playback access</strong><p id="playback-auth"></p></div></div>
+          <button id="connect" class="account-action" type="button" aria-haspopup="dialog"><span class="account-action-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h15m-4-4 4 4-4 4M20 17H5m4-4-4 4 4 4"/></svg></span><span class="account-action-copy"><strong id="connect-label">Sign in to Hik-Connect</strong><small id="connect-description">Connect your cameras</small></span><span class="account-action-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></span></button>
+          <button id="disconnect" class="account-action account-disconnect" type="button" hidden><span class="account-action-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 4 16 16M8 8l-3 3a4 4 0 0 0 6 6l3-3M10 6l2-2a4 4 0 0 1 6 6l-2 2"/></svg></span><span class="account-action-copy"><strong>Disconnect Hik-Connect</strong><small>Remove this saved camera connection</small></span></button>
+        </section>
+        <section class="account-viewer-section" aria-label="Viewer settings"><p class="account-section-title">VIEWER SETTINGS</p>
+          <details id="nav-password-details" class="account-password-details"><summary class="account-action"><span class="account-action-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 10h12v11H6zM8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg></span><span class="account-action-copy"><strong>Change viewer password</strong><small>Manage access to this workspace</small></span><span class="account-action-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></span></summary>
+            <form id="password-form" class="account-password-form">
+              <label>Current password<input id="current-password" type="password" autocomplete="current-password" required maxlength="128"></label>
+              <label>New password<input id="new-password" type="password" autocomplete="new-password" required minlength="12" maxlength="128" placeholder="At least 12 characters"></label>
+              <button id="password-submit" class="primary" type="submit">Save new password</button>
+              <p class="account-password-help">Other viewer sessions will be signed out.</p>
+            </form>
+          </details><p id="password-notice" class="account-password-notice" role="status" hidden></p>
+        </section>
+        <div class="account-session-footer"><span>Private viewer session</span><button id="viewer-logout" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 4H4v16h6M13 8l4 4-4 4m-4-4h12"/></svg><span>Sign out</span></button></div>
+      </div>
+    </details></header>
+  <section id="auth-panel" class="panel auth-panel" hidden>
+    <p class="eyebrow">YOUR CAMERA WORKSPACE</p><h1 id="auth-title">Sign in.</h1>
+    <p id="auth-detail" class="muted">Use your viewer account to access saved camera connections.</p>
+    <form id="auth-form">
+      <label>Viewer username<input id="viewer-username" name="username" autocomplete="username" required minlength="3" maxlength="80"></label>
+      <label>Viewer password<input id="viewer-password" name="password" type="password" autocomplete="current-password" required maxlength="128"></label>
+      <label id="confirm-label" hidden>Confirm password<input id="viewer-confirm" type="password" autocomplete="new-password" maxlength="128"></label>
+      <button id="auth-submit" class="primary" type="submit">Sign in</button>
+    </form>
+    <p id="auth-notice" class="form-notice" role="status"></p>
+  </section>
+  <dialog id="provider-dialog" class="provider-dialog" aria-labelledby="provider-title" aria-describedby="provider-description">
+    <div class="provider-dialog-header"><span class="provider-mark" aria-hidden="true">H</span><button id="provider-close" class="dialog-close" type="button" aria-label="Close sign-in">&#215;</button></div>
+    <p class="eyebrow">HIK-CONNECT</p><h2 id="provider-title">Connect your cameras.</h2>
+    <p id="provider-description" class="muted">Sign in with your Hik-Connect account.</p>
+    <form id="provider-form">
+      <label>Hik-Connect ID<input id="provider-account" name="username" autocomplete="username" placeholder="Email, phone or username" required maxlength="320" autocapitalize="none" spellcheck="false"></label>
+      <label>Password<span class="provider-password-wrap"><input id="provider-password" name="password" type="password" autocomplete="current-password" required maxlength="128"><button id="provider-show-password" type="button" aria-label="Show password" aria-pressed="false">Show</button></span></label>
+      <p id="provider-notice" class="form-notice" role="status" aria-live="polite" hidden></p>
+      <button id="provider-submit" class="primary" type="submit">Sign in</button>
+    </form>
+    <p class="privacy-note">Your password is used to sign in and is not saved. Saved access is encrypted on this computer.</p>
+  </dialog>
+  <main id="workspace" hidden>
+    <section id="connection-banner" class="connection-banner" role="status" aria-live="polite" hidden><span class="connection-banner-icon" aria-hidden="true">!</span><div><strong id="connection-title"></strong><p id="connection-detail"></p></div><button id="connection-check" class="secondary" type="button">Check connection</button></section><section id="account-recovery" class="account-recovery" role="status" aria-live="polite" hidden><span class="recovery-icon" aria-hidden="true">!</span><div><strong id="recovery-title">Reconnect your cameras</strong><p id="recovery-description"></p><p id="recovery-detail" class="recovery-detail" hidden></p></div><div class="recovery-actions"><button id="recovery-sign-in" type="button" class="secondary">Sign in again</button><button id="recovery-playback" type="button" class="secondary" hidden>Check iVMS playback access</button><button id="recovery-check" type="button" class="secondary">Check connection</button></div></section>
+    <div class="workspace-rows">
+
+        <section id="recorder-library-page" class="panel device-panel camera-library-panel"><div class="panel-title"><div><p class="eyebrow">CAMERA LIBRARY</p><h2>Your recorders <span class="count" id="device-count">0</span></h2></div><button id="refresh" class="secondary" disabled>Refresh</button></div>
+<div class="library-overview"><span id="library-online" class="library-total online">0 online</span><span id="library-offline" class="library-total offline">0 offline</span><span class="library-cloud">Hik-Connect</span></div>
+<div class="library-filters"><div class="library-search-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="camera-search" type="search" placeholder="Search cameras or recorders" aria-label="Search cameras"></div><select id="camera-filter" aria-label="Filter cameras"><option value="">All cameras</option></select></div>
+<div id="library-loading" class="loading-state" role="status" hidden><i class="loading-spinner" aria-hidden="true"></i><span>Loading your recorders and cameras...</span></div><div id="device-empty" class="device-empty"><h3 id="empty-title">Connect your account.</h3><p id="empty-detail">Your camera library appears here.</p></div><div id="devices" class="camera-library" hidden></div><div class="panel-footer"><span id="last-checked">Not checked yet.</span><span id="library-refresh-status" class="library-refresh-status" role="status" hidden></span><span>Previews / 5 min</span></div></section>
+      <div id="recorder-view-page" class="monitor-section" hidden>
+        <header class="recorder-page-header"><a id="back-to-recorders" href="#/" class="recorder-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 5-7 7 7 7M5 12h14"/></svg><span>Back to recorders</span></a><div class="recorder-page-heading"><div><p class="eyebrow">RECORDER LIVE VIEW</p><h1 id="recorder-page-title" tabindex="-1">Recorder</h1><p id="recorder-page-summary"></p></div><div class="recorder-page-actions"><span id="recorder-page-status" class="badge">Connecting</span><button id="recorder-refresh" class="secondary" type="button">Refresh status</button><button id="recorder-fullscreen" class="secondary" type="button">&#9974; Fullscreen grid</button></div></div></header>
+        <section class="panel viewer-panel">
+<div class="panel-title"><div><p class="eyebrow">LIVE MONITOR</p><h2 id="viewer-title">Select a camera</h2></div><span id="live-badge" class="badge">4 tiles</span></div>
+<div class="monitor-toolbar"><button id="back-to-grid" class="secondary" hidden>Back to cameras</button><span id="group-status" class="group-status"></span><span id="adaptive-status" class="adaptive-status" role="status" title="Auto uses SD in grids and HD in focused views. Hidden cameras pause unless recording or providing selected audio. Explicit quality choices override Auto.">Adaptive streaming</span><label>Group picture <select id="group-picture-fit"><option value="fit">Fit</option><option value="fill">Fill</option><option value="original">Original size</option></select></label><label>Grid <select id="layout-size"><option value="1">1 camera</option><option value="4" selected>4 cameras</option><option value="9">9 cameras</option><option value="16">16 cameras</option></select></label><button id="start-all" class="secondary">Start all</button><button id="stop-all" class="secondary">Stop all</button><button id="cycle-toggle" class="secondary" aria-pressed="false">Start rotation</button><label>Every <select id="cycle-seconds"><option value="15">15 seconds</option><option value="30">30 seconds</option><option value="60">60 seconds</option><option value="120">2 minutes</option></select></label><span id="rotation-status" class="group-status" role="status" aria-live="polite"></span></div>
+<div id="recorder-loading" class="loading-state recorder-loading" role="status" hidden><i class="loading-spinner" aria-hidden="true"></i><span>Preparing cameras...</span></div><div id="camera-grid" class="camera-grid" data-count="4" aria-label="Camera viewing grid"></div>
+<details class="monitor-settings organization-panel">
+  <summary class="organization-summary"><span class="organization-summary-icon" aria-hidden="true">&#9638;</span><span><strong>Layouts &amp; organization</strong><small>Save your view. Keep your cameras easy to find.</small></span><span class="organization-chevron" aria-hidden="true">&#8964;</span></summary>
+  <div class="organization-content">
+    <section class="organization-card" aria-labelledby="layout-section-title">
+      <header class="organization-card-heading"><span class="organization-card-icon" aria-hidden="true">&#9638;</span><div><h3 id="layout-section-title">Viewing layouts</h3><p>Keep the current grid, cameras and picture settings.</p></div><span id="layout-count" class="organization-count">0 saved</span></header>
+      <label class="organization-field" for="layout-name">Save this view</label>
+      <div class="organization-input-row"><input id="layout-name" maxlength="50" placeholder="e.g. Main entrance &amp; parking" autocomplete="off"><button id="save-layout" class="organization-primary" type="button">Save layout</button></div>
+      <p class="organization-hint">Using an existing name updates that layout.</p>
+      <div class="organization-divider"></div>
+      <label class="organization-field" for="saved-layouts">Your saved layouts</label>
+      <select id="saved-layouts"><option value="">No saved layouts yet</option></select>
+      <p id="layout-description" class="organization-hint">Save a view above to return to it later.</p>
+      <div class="organization-actions"><button id="load-layout" class="organization-primary" type="button" disabled>Open layout</button><button id="delete-layout" class="organization-delete" type="button" disabled>Delete layout</button></div>
+    </section>
+    <section class="organization-card" aria-labelledby="camera-section-title">
+      <header class="organization-card-heading"><span class="organization-card-icon" aria-hidden="true">&#9673;</span><div><h3 id="camera-section-title">Camera organization</h3><p>Applies to the selected camera.</p></div></header>
+      <div class="organization-camera"><span class="organization-camera-dot" aria-hidden="true"></span><div><strong id="organization-camera-name">No camera selected</strong><small id="organization-recorder-name">Select a tile to manage this camera.</small></div><button id="favourite-selected" class="organization-favourite" type="button" aria-pressed="false" disabled>Favourite</button></div>
+      <label class="organization-field" for="camera-group-name">Camera group</label>
+      <div class="organization-input-row"><input id="camera-group-name" maxlength="50" placeholder="e.g. Entrances or Ground floor" disabled><button id="set-camera-group" class="organization-primary" type="button" disabled>Apply group</button></div>
+      <p class="organization-hint">Find this group in your camera library filters. Clear the name to remove the camera from its group.</p>
+    </section>
+    <p id="organization-feedback" class="organization-feedback" role="status" aria-live="polite" hidden></p>
+  </div>
+</details>
+</section>
+
+      </div>
+    </div><section id="clip-panel" class="recordings-page" hidden aria-labelledby="recordings-title">
+<header class="recordings-heading"><div><p class="eyebrow">YOUR WORKSPACE</p><h1 id="recordings-title" tabindex="-1">Recordings</h1><p>Clips captured from your live cameras.</p></div><span id="recordings-total" class="recordings-total">0 clips</span></header>
+<div class="recordings-storage"><span aria-hidden="true">&#9432;</span><div><strong>Keep the moments you need.</strong><p>Finished clips save automatically to server storage and survive refreshes. Your retention policy and storage limit control automatic cleanup. Each clip stops at 15 minutes or 128 MB.</p></div></div>
+<section id="recordings-active-section" hidden><h2 class="recordings-section-title">Recording now <span id="recordings-active-count"></span></h2><div id="recordings-active" class="recordings-active-grid"></div></section>
+<div class="recordings-list-heading"><h2 class="recordings-section-title">Ready to download</h2><span id="recordings-size"></span></div>
+<div id="recordings-empty" class="recordings-empty"><span aria-hidden="true">&#9654;</span><h2>Your clips will appear here</h2><p>Open a live camera and choose Record clip.<br>When you stop recording, the clip is ready to preview and download.</p><a id="recordings-open-cameras" href="#/" class="recorder-back">Go to cameras</a></div>
+<p id="recordings-loading" class="storage-loading" role="status" hidden>Loading saved recordings...</p><p id="recordings-error" class="form-notice" role="alert" hidden></p><div id="clips" class="recordings-grid"></div></section><section id="settings-page" class="settings-page" aria-labelledby="settings-title" hidden>
+<header class="recordings-heading"><div><p class="eyebrow">WORKSPACE SETTINGS</p><h1 id="settings-title" tabindex="-1">Recording storage</h1><p>Control how long clips are kept and how much space they use.</p></div><button id="storage-refresh" class="secondary" type="button">Refresh usage</button></header>
+<p id="storage-loading" class="storage-loading" role="status" hidden>Loading storage details...</p>
+<p id="storage-error" class="form-notice" role="alert" hidden></p>
+<div class="storage-metrics"><article><span>Storage occupied</span><strong id="storage-used">--</strong><small id="storage-clips">Checking recordings</small></article><article><span>Storage limit</span><strong id="storage-limit">--</strong><small id="storage-available">Available for recordings</small></article><article><span>Retention period</span><strong id="storage-retention">--</strong><small>Automatic cleanup every minute</small></article></div>
+<section class="storage-policy-card"><div class="storage-policy-heading"><div><h2>Recording policy</h2><p>Finished clips save automatically on this viewer's server.</p></div><a class="storage-recordings-link" href="#/recordings">View recordings &#8599;</a></div>
+<div class="storage-meter-row"><span id="storage-meter-label">Checking usage</span><span id="storage-percentage">--</span></div><progress id="storage-meter" max="100" value="0" aria-label="Recording storage used"></progress>
+<form id="storage-settings-form"><fieldset><legend>Keep recordings for</legend><div class="retention-options"><label><input type="radio" name="retention" value="1"><span><strong>1 day</strong><small>24 hours</small></span></label><label><input type="radio" name="retention" value="7" checked><span><strong>7 days</strong><small>1 week</small></span></label><label><input type="radio" name="retention" value="30"><span><strong>1 month</strong><small>30 days</small></span></label><label><input type="radio" name="retention" value="90"><span><strong>3 months</strong><small>90 days</small></span></label></div></fieldset>
+<div class="storage-limit-field"><label for="storage-limit-input">Maximum recording storage <span>GB</span></label><input id="storage-limit-input" type="number" min="0.25" max="1024" step="0.25" value="5" required><p>Choose between 0.25 GB and 1024 GB. Space is reserved for the server to keep running.</p></div>
+<div class="storage-cleanup-note"><strong>Oldest recordings are removed automatically.</strong><p>Clips are deleted when their retention period ends. When the storage limit is reached, the oldest clips are removed to make room. Reducing either setting applies cleanup immediately.</p></div>
+<div class="storage-save-row"><span id="storage-cleanup-time">Cleanup status will appear here.</span><button id="storage-save" type="submit" class="organization-primary">Save storage settings</button></div><p id="storage-feedback" class="organization-feedback" role="status" aria-live="polite" hidden></p></form></section></section><div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+  </main>
+  <footer><span>HIKVISION / WINDOWS V2</span><span>Private camera workspace</span></footer>
+  <div id="toast-region" class="toast-region" role="status" aria-live="polite" aria-relevant="additions"></div>
+</body>
+</html>

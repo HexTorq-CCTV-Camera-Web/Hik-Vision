@@ -1,0 +1,11 @@
+.private/
+.env
+captures/
+*.har
+*.log
+node_modules/
+
+wine-test/*.zip
+wine-test/runtime/
+wine-test/logs/
+wine-test/__pycache__/

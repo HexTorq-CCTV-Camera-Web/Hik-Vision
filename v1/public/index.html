@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14191f">
+  <title>Hikvision / Camera workspace</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.mjs"></script>
+</head>
+<body>
+  <header class="topbar"><a href="/" class="brand"><span class="brand-icon" aria-hidden="true">◉</span> CAMERA WORKSPACE <span class="version">HIKVISION / V1</span></a><span class="local-label"><span class="dot"></span> LOCAL DEVELOPMENT</span></header>
+  <main>
+    <div class="page-heading"><div><p class="eyebrow">HIKVISION CLOUD</p><h1>Your cameras.<br><span>One place.</span></h1><p class="intro">Connect your Hik-Connect account to see your recorders.<br>Choose an online recorder and start a camera channel.</p></div><div class="phase"><span class="phase-number">01</span><div><span class="eyebrow">WORKSPACE STATUS</span><strong id="phase-text">Connect your account</strong></div></div></div>
+    <div class="workspace-grid">
+      <aside>
+        <section class="panel connection-panel"><div class="panel-title"><h2>Account connection</h2><span id="connection-badge" class="badge">Not connected</span></div><p class="muted">Use the Hik-Connect account already signed in to Chrome on this computer.</p><div class="account" id="account" hidden><span class="avatar" aria-hidden="true">H</span><div><strong id="account-name"></strong><small id="account-region"></small></div></div><button id="connect" class="primary">Connect signed-in Chrome <span>↗</span></button><button id="disconnect" class="secondary full" hidden>Disconnect this workspace</button><a class="portal-link" href="https://www.hik-connect.com/views/main/index.html#/common/personal/DeviceManagement" target="_blank" rel="noopener noreferrer">Open Hik-Connect portal <span>↗</span></a><p class="privacy-note">Your browser session stays in server memory. This workspace does not save your account password.</p></section>
+        <section class="panel setup-panel"><p class="eyebrow">SETUP CHECKLIST</p><ol class="checklist"><li id="step-account"><span class="check">1</span><div><strong>Connect your account</strong><p>Sign in to the official portal in Chrome.</p></div></li><li id="step-dvr"><span class="check">2</span><div><strong>Add or share your DVR</strong><p>Use Hik-Connect on your phone to add the recorder or accept its shared access.</p></div></li><li id="step-playback"><span class="check">3</span><div><strong>Watch a camera</strong><p>Select a shared channel to start live video.</p></div></li></ol><details class="help"><summary>Chrome connection help</summary><p>In Chrome, open <code>chrome://inspect/#remote-debugging</code> and enable remote debugging. Keep your signed-in Hik-Connect device portal open. Approve Chrome’s connection prompt if it appears.</p></details></section>
+      </aside>
+      <div class="main-column">
+        <section class="panel device-panel"><div class="panel-title"><div><p class="eyebrow">YOUR DEVICES</p><h2>Recorders &amp; cameras <span class="count" id="device-count">—</span></h2></div><button id="refresh" class="secondary" disabled>↻ Refresh</button></div><div id="device-empty" class="device-empty"><span class="device-symbol" aria-hidden="true">▤</span><h3 id="empty-title">Start with your Hik-Connect account.</h3><p id="empty-detail">Connect the signed-in Chrome session to load the real device list.</p></div><div id="devices" class="devices" hidden></div><p class="sharing-note" id="sharing-note" hidden></p><div class="panel-footer"><span id="last-checked">Device list has not been checked.</span><span id="list-source">HIK-CONNECT CLOUD</span></div></section>
+        <section class="panel viewer-panel"><div class="panel-title"><div><p class="eyebrow">LIVE VIEW</p><h2 id="viewer-title">Select a camera channel</h2></div><span id="live-badge" class="badge">Stopped</span></div><div class="stage" id="live-stage"><div class="stage-grid" aria-hidden="true"></div><span class="stage-label">HIKVISION / LIVE</span><div class="stage-content" id="live-placeholder"><span class="viewfinder" aria-hidden="true">?</span><h3 id="live-heading">Your next view starts here.</h3><p id="viewer-detail">Choose a channel from an online recorder to start live video.</p></div><img id="live-video" class="live-image" alt="Live camera video" hidden></div><div class="live-controls"><label>Quality <select id="quality"><option value="hd">HD ? Main stream</option><option value="sd">SD ? Substream</option></select></label><div><button id="audio-toggle" class="secondary" aria-pressed="false" disabled>Unmute</button><button id="fullscreen" class="secondary" disabled>Fullscreen</button><button id="stop-live" class="secondary" disabled>Stop</button></div></div><div class="viewer-footer"><span id="live-description">Select a camera to begin.</span><span>Live video &middot; Up to 8 fps &middot; Sound muted by default</span></div></section>
+        <details class="panel diagnostics"><summary>Connection details <span>DIAGNOSTICS</span></summary><div class="diagnostic-heading"><p>Connection events. Passwords and session tokens are omitted.</p><button id="copy-log" class="secondary">Copy log</button></div><pre id="log">No connection events yet.</pre></details>
+      </div>
+    </div>
+    <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+  </main>
+  <footer><span>HIKVISION WORKSPACE / V1</span><span>Local setup · Camera integration in progress</span></footer>
+</body>
+</html>

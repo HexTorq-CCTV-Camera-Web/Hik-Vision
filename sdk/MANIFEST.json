@@ -1,0 +1,885 @@
+{
+  "format": 1,
+  "platform": "windows-x64",
+  "files": [
+    {
+      "path": "AudioRender.dll",
+      "bytes": 158720,
+      "sha256": "2838779e6c443fda1e83b5639ad0724b8f11e7931b2fa61c9c7c98318a4cd4fe",
+      "architecture": "x64",
+      "imports": [
+        "DSOUND.dll",
+        "KERNEL32.dll",
+        "ole32.dll",
+        "USER32.dll",
+        "WINMM.dll"
+      ]
+    },
+    {
+      "path": "concrt140.dll",
+      "bytes": 333632,
+      "sha256": "511aba3d00b9925e7bc64e2132d77a76c1fd9e9d200ec0ef864b7a0f00c68995",
+      "architecture": "x64",
+      "imports": [
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "VCRUNTIME140.dll"
+      ]
+    },
+    {
+      "path": "DataCenterApi_EX.dll",
+      "bytes": 715264,
+      "sha256": "9d48849fa90f5218ff61ec01b1b314bcdb0dedaa35f868820791335b9b29b5fd",
+      "architecture": "x64",
+      "imports": [
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "hlog.dll",
+        "hpr.dll",
+        "KERNEL32.dll",
+        "libcurl.dll",
+        "libGetHDSign.dll",
+        "MSVCP140.dll",
+        "opensslwrap.dll",
+        "VCRUNTIME140.dll"
+      ]
+    },
+    {
+      "path": "HCCore.dll",
+      "bytes": 3196928,
+      "sha256": "769a3f6b4b51a23ceca03d22ae97fb08272c0952cda8e743a345acd8eebdc0ac",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "KERNEL32.dll",
+        "MSWSOCK.dll",
+        "RPCRT4.dll",
+        "USER32.dll",
+        "WINMM.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "HCNetSDK.dll",
+      "bytes": 1229312,
+      "sha256": "7fda9409616229863e806baa4428e6470d1da0db01bed691f9b9cc0bcb168d51",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "HCCore.dll",
+        "KERNEL32.dll",
+        "MSWSOCK.dll",
+        "RPCRT4.dll",
+        "WINMM.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "HCNetSDKCom/AnalyzeData.dll",
+      "bytes": 727552,
+      "sha256": "2132da23eebe38a36316a32e3c98da6036c38d6719b5e36549e668088b71b55b",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll"
+      ]
+    },
+    {
+      "path": "HCNetSDKCom/AudioIntercom.dll",
+      "bytes": 2715136,
+      "sha256": "aedf68bdbb23f8def4ab5abfce1f0735878e061c50e4f18c21daf834864fb4ef",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll",
+        "ole32.dll",
+        "WINMM.dll"
+      ]
+    },
+    {
+      "path": "HCNetSDKCom/AudioProcess.dll",
+      "bytes": 571904,
+      "sha256": "a1605871de7b89f2af482f8920f99ac5dd896bdcb1cc1012b9ae1f23b282a1a7",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll"
+      ]
+    },
+    {
+      "path": "HCNetSDKCom/AudioRender.dll",
+      "bytes": 159744,
+      "sha256": "a81fc69c82079249c31abb31328f8915a05f8a14908c13c8c98e72dec7a01164",
+      "architecture": "x64",
+      "imports": [
+        "DSOUND.dll",
+        "KERNEL32.dll",
+        "ole32.dll",
+        "USER32.dll",
+        "WINMM.dll"
+      ]
+    },
+    {
+      "path": "HCNetSDKCom/HCAlarm.dll",
+      "bytes": 1236480,
+      "sha256": "24cb4d4ed71ba9ec81a4cbf8e5e4e02eab13a8c3012c127023b2b77dfcaa9a1f",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "HCCore.dll",
+        "HCCoreDevCfg.dll",
+        "KERNEL32.dll",
+        "MSWSOCK.dll",
+        "RPCRT4.dll",
+        "WINMM.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "HCNetSDKCom/HCCoreDevCfg.dll",
+      "bytes": 1103360,
+      "sha256": "a1e9d7bbc9017adc71e8ccb2687bf6e13b4bdd15575230e77207a35cbf53afa5",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "HCCore.dll",
+        "KERNEL32.dll",
+        "MSWSOCK.dll",
+        "RPCRT4.dll",
+        "WINMM.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "HCNetSDKCom/HCDisplay.dll",
+      "bytes": 1309184,
+      "sha256": "5b54019f71e01c8e6c049d59f5b54bbaf4c073359e58748731fca8e7652e5d68",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "HCCore.dll",
+        "HCCoreDevCfg.dll",
+        "KERNEL32.dll",
+        "MSWSOCK.dll",
+        "RPCRT4.dll",
+        "WINMM.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "HCNetSDKCom/HCGeneralCfgMgr.dll",
+      "bytes": 2116608,
+      "sha256": "f83cb9c8c0ea9688f34e9069b4ec3513accc91945a192ffd633aa3cc7e5de454",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "HCCore.dll",
+        "HCCoreDevCfg.dll",
+        "KERNEL32.dll",
+        "MSWSOCK.dll",
+        "RPCRT4.dll",
+        "WINMM.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "HCNetSDKCom/HCIndustry.dll",
+      "bytes": 1668096,
+      "sha256": "1e80e0d08ab693ab94bbbb9c4053f2e93d71d1156ff039f7d1dcda6f37e3d528",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "HCCore.dll",
+        "HCCoreDevCfg.dll",
+        "KERNEL32.dll",
+        "MSWSOCK.dll",
+        "RPCRT4.dll",
+        "WINMM.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "HCNetSDKCom/HCPlayBack.dll",
+      "bytes": 1079296,
+      "sha256": "c3bbdd6a7fd860603005dff68a4269d99cfb5c40c953c124e222b209e17d6d60",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "HCCore.dll",
+        "HCCoreDevCfg.dll",
+        "HCGeneralCfgMgr.dll",
+        "KERNEL32.dll",
+        "MSWSOCK.dll",
+        "RPCRT4.dll",
+        "WINMM.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "HCNetSDKCom/HCPreview.dll",
+      "bytes": 997376,
+      "sha256": "bf72064bd1b645b658e85e69662049adbdc5e809e0e5a06e50f76caea872f10f",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "HCCore.dll",
+        "HCCoreDevCfg.dll",
+        "KERNEL32.dll",
+        "MSWSOCK.dll",
+        "RPCRT4.dll",
+        "WINMM.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "HCNetSDKCom/HCVoiceTalk.dll",
+      "bytes": 1367040,
+      "sha256": "d25acbebb770447b7d5b75d664be82bcb563396682c63768d57d7df2e35fec49",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "HCCore.dll",
+        "HCCoreDevCfg.dll",
+        "KERNEL32.dll",
+        "MSWSOCK.dll",
+        "RPCRT4.dll",
+        "WINMM.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "HCNetSDKCom/libiconv2.dll",
+      "bytes": 987648,
+      "sha256": "371decacb5a85c1df945697436d8db234cc9545301df745ec173b6e6694a74b6",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll"
+      ]
+    },
+    {
+      "path": "HCNetSDKCom/OpenAL32.dll",
+      "bytes": 1339904,
+      "sha256": "1a747d7e810a1e9eb1b3810082118df05057562f3b6cb1c09a7bea569489f0ad",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll",
+        "ole32.dll",
+        "SHELL32.dll",
+        "USER32.dll",
+        "WINMM.dll"
+      ]
+    },
+    {
+      "path": "HCNetSDKCom/StreamTransClient.dll",
+      "bytes": 934912,
+      "sha256": "54ae7b94247c1f104adfe8a14f7bad27c04b85039db0b816c5ea4142e5eb08f4",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "KERNEL32.dll",
+        "MSWSOCK.dll",
+        "RPCRT4.dll",
+        "WINMM.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "HCNetSDKCom/SystemTransform.dll",
+      "bytes": 1133056,
+      "sha256": "aef27eea13e3976595d37fa637935eb70cdc6b55b194a0e892c203042021f6c0",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll",
+        "WINMM.dll"
+      ]
+    },
+    {
+      "path": "hlog.dll",
+      "bytes": 1351168,
+      "sha256": "20f6789c51c0cf4a978a75a9db662ce0dd1fab91a9df4f8a23fd26ca9db6c13c",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "hpr.dll",
+        "KERNEL32.dll",
+        "MSVCP90.dll",
+        "MSVCR90.dll",
+        "ODBC32.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "hpr.dll",
+      "bytes": 222208,
+      "sha256": "a19b84b2a4fd92c26128ccd6408d197f8ee29c21cb2797d3c4a71ae0c9698cdf",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "KERNEL32.dll",
+        "MSVCP90.dll",
+        "MSVCR90.dll",
+        "MSWSOCK.dll",
+        "RPCRT4.dll",
+        "WINMM.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "libcrypto-3-x64.dll",
+      "bytes": 5596160,
+      "sha256": "8031fd17a82917bfac680e6b35ba1cc2f5baf7ff67979ec68ef7d939be5a1607",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "bcrypt.dll",
+        "KERNEL32.dll",
+        "USER32.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "libcurl.dll",
+      "bytes": 777728,
+      "sha256": "40565a4255b71d05008fb5e5ea3da2c88af8ba3d6493f91966a2a659d1dbfe7a",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "bcrypt.dll",
+        "CRYPT32.dll",
+        "IPHLPAPI.DLL",
+        "KERNEL32.dll",
+        "libcrypto-3-x64.dll",
+        "libnghttp2.dll",
+        "libssl-3-x64.dll",
+        "VCRUNTIME140.dll",
+        "WLDAP32.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "libGetHDSign.dll",
+      "bytes": 35616,
+      "sha256": "947df400a249996af48077be5872a92add59e7d763b76c70ce949a8bc592e9a2",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "IPHLPAPI.DLL",
+        "KERNEL32.dll",
+        "MSVCP90.dll",
+        "MSVCR90.dll",
+        "USER32.dll"
+      ]
+    },
+    {
+      "path": "libnghttp2.dll",
+      "bytes": 161792,
+      "sha256": "244efa524d532c5763fe2c375f82cbd140b0feb3aed3059f6911db438316d541",
+      "architecture": "x64",
+      "imports": [
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll"
+      ]
+    },
+    {
+      "path": "libssl-3-x64.dll",
+      "bytes": 1259520,
+      "sha256": "e94c44d39521b4e06b941989896629cd8a99b41568b1509ec52a78dbbdc4410f",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll",
+        "libcrypto-3-x64.dll"
+      ]
+    },
+    {
+      "path": "Microsoft.VC90.MFC/mfc90.dll",
+      "bytes": 5086712,
+      "sha256": "eb3de7a52206343717216bd6c3e21ec8e6db173300d016e0ec4ab3d53caa0c04",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "COMCTL32.dll",
+        "COMDLG32.dll",
+        "GDI32.dll",
+        "gdiplus.dll",
+        "IMM32.dll",
+        "KERNEL32.dll",
+        "MSIMG32.dll",
+        "MSVCR90.dll",
+        "ODBC32.dll",
+        "ole32.dll",
+        "OLEACC.dll",
+        "OLEAUT32.dll",
+        "oledlg.dll",
+        "SHELL32.dll",
+        "SHLWAPI.dll",
+        "urlmon.dll",
+        "USER32.dll",
+        "WININET.dll",
+        "WINMM.dll",
+        "WINSPOOL.DRV",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "Microsoft.VC90.MFC/mfc90u.dll",
+      "bytes": 5105656,
+      "sha256": "8739d0707993d3ca1ad92a482cd0bbbdc72b5e9ff33a104138c4889319b28d51",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "COMCTL32.dll",
+        "COMDLG32.dll",
+        "GDI32.dll",
+        "gdiplus.dll",
+        "IMM32.dll",
+        "KERNEL32.dll",
+        "MSIMG32.dll",
+        "MSVCR90.dll",
+        "ODBC32.dll",
+        "ole32.dll",
+        "OLEACC.dll",
+        "OLEAUT32.dll",
+        "oledlg.dll",
+        "SHELL32.dll",
+        "SHLWAPI.dll",
+        "urlmon.dll",
+        "USER32.dll",
+        "WININET.dll",
+        "WINMM.dll",
+        "WINSPOOL.DRV",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "Microsoft.VC90.MFC/mfcm90.dll",
+      "bytes": 67072,
+      "sha256": "d72acbfe224e2f0d207db734b8bffc413c6f00f9a97398c32ffe5aaaa4fff776",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll",
+        "mfc90.dll",
+        "mscoree.dll",
+        "msvcm90.dll",
+        "MSVCR90.dll",
+        "USER32.dll"
+      ]
+    },
+    {
+      "path": "Microsoft.VC90.MFC/mfcm90u.dll",
+      "bytes": 67072,
+      "sha256": "3e4fb7f3d4fedd249c8a09ec55bd984a9f15bed3b2dd1bd87c4c8a53712abde9",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll",
+        "mfc90u.dll",
+        "mscoree.dll",
+        "msvcm90.dll",
+        "MSVCR90.dll",
+        "USER32.dll"
+      ]
+    },
+    {
+      "path": "Microsoft.VC90.MFC/Microsoft.VC90.MFC.manifest",
+      "bytes": 2356,
+      "sha256": "269344155c4cf6e2aede35f51f7911c05c2382a30cb27e70b1460971b946a198"
+    },
+    {
+      "path": "MidPage.dll",
+      "bytes": 35328,
+      "sha256": "5a85dcf251aac304f52b2f063dc5a8ee91cc18e46b22e87e2d7ad6a11f155968",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll",
+        "mfc90.dll",
+        "MSVCP90.dll",
+        "MSVCR90.dll",
+        "ole32.dll",
+        "OLEAUT32.dll",
+        "USER32.dll"
+      ]
+    },
+    {
+      "path": "msvcm90.dll",
+      "bytes": 245760,
+      "sha256": "f20398cee3fef2afc996e66779b04d574e57eb5ddaaf07a9594008061ea7854b",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll",
+        "mscoree.dll",
+        "MSVCR90.dll",
+        "ole32.dll"
+      ]
+    },
+    {
+      "path": "msvcp140.dll",
+      "bytes": 633152,
+      "sha256": "517cd3aac2177a357cca6032f07ad7360ee8ca212a02dd6e1301bf6cfade2094",
+      "architecture": "x64",
+      "imports": [
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-multibyte-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "CONCRT140.dll",
+        "KERNEL32.dll",
+        "VCRUNTIME140.dll"
+      ]
+    },
+    {
+      "path": "msvcp90.dll",
+      "bytes": 856576,
+      "sha256": "e5f2cf93deb7c430ae6d07d57b8980d6a2255c669e286c3cefc7f6953e1f0fe5",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll",
+        "MSVCR90.dll"
+      ]
+    },
+    {
+      "path": "msvcr90.dll",
+      "bytes": 626688,
+      "sha256": "93f30d067897dba001b9f7ada68c1c50b1de40a8ed9f34905af43537009a0aa6",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll"
+      ]
+    },
+    {
+      "path": "OpenNetStream.dll",
+      "bytes": 1182720,
+      "sha256": "bfb6e740340930b98ba85b621d8102b9670b0eee466be9f6e9a315e2915f399e",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-multibyte-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "hlog.dll",
+        "hpr.dll",
+        "KERNEL32.dll",
+        "libcurl.dll",
+        "libGetHDSign.dll",
+        "MidPage.dll",
+        "MSVCP140.dll",
+        "NETAPI32.dll",
+        "ole32.dll",
+        "opensslwrap.dll",
+        "VCRUNTIME140.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "opensslwrap.dll",
+      "bytes": 50688,
+      "sha256": "a5a42c9f14b69c7c0e7a17e0fe9bcd3a4d4d3fc6f21e34c3b84911fb9792a504",
+      "architecture": "x64",
+      "imports": [
+        "hpr.dll",
+        "KERNEL32.dll",
+        "libcrypto-3-x64.dll",
+        "libssl-3-x64.dll",
+        "MSVCR90.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "PlayCtrl.dll",
+      "bytes": 8335872,
+      "sha256": "943195e99a99da945e9c1ec891fbd6cc54684b28b43f336d1a19707052daca33",
+      "architecture": "x64",
+      "imports": [
+        "AudioRender.dll",
+        "GDI32.dll",
+        "KERNEL32.dll",
+        "USER32.dll",
+        "WINMM.dll"
+      ]
+    },
+    {
+      "path": "PlayCtrl/AudioProcess.dll",
+      "bytes": 492544,
+      "sha256": "7a726b759123fefab10d2687a7e4d191ccf40cab0a1cff367cd7d4cc22d11ad5",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll"
+      ]
+    },
+    {
+      "path": "PlayCtrl/AudioRender.dll",
+      "bytes": 158720,
+      "sha256": "2838779e6c443fda1e83b5639ad0724b8f11e7931b2fa61c9c7c98318a4cd4fe",
+      "architecture": "x64",
+      "imports": [
+        "DSOUND.dll",
+        "KERNEL32.dll",
+        "ole32.dll",
+        "USER32.dll",
+        "WINMM.dll"
+      ]
+    },
+    {
+      "path": "PlayCtrl/HmMerge.dll",
+      "bytes": 385536,
+      "sha256": "24ee52a06d24a4f509f36770c3fdd1a6b5ffae44ab52c03df274f9e1f2176125",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll"
+      ]
+    },
+    {
+      "path": "PlayCtrl/HXVA.dll",
+      "bytes": 2255872,
+      "sha256": "177ecebaf8f42209b954f4ba38e495fd8135d61e3b44cc138485e190f9731b34",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "d3d11.dll",
+        "d3d9.dll",
+        "dxgi.dll",
+        "dxva2.dll",
+        "KERNEL32.dll",
+        "ole32.dll",
+        "OLEAUT32.dll",
+        "USER32.dll",
+        "WINMM.dll"
+      ]
+    },
+    {
+      "path": "PlayCtrl/libmmd.dll",
+      "bytes": 3249568,
+      "sha256": "6142bde15261bd7177252aa8f716560a5344004e1b97a0b3c6280fc10d22829b",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll"
+      ]
+    },
+    {
+      "path": "PlayCtrl/OpenAL32.dll",
+      "bytes": 609792,
+      "sha256": "8c9578a702a221cb950b920c43e8ee448a88dd90b1cf6ca57a017c61330c37c1",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll",
+        "ole32.dll",
+        "SHELL32.dll",
+        "USER32.dll",
+        "WINMM.dll"
+      ]
+    },
+    {
+      "path": "PlayCtrl/PlayCtrl.dll",
+      "bytes": 8335872,
+      "sha256": "943195e99a99da945e9c1ec891fbd6cc54684b28b43f336d1a19707052daca33",
+      "architecture": "x64",
+      "imports": [
+        "AudioRender.dll",
+        "GDI32.dll",
+        "KERNEL32.dll",
+        "USER32.dll",
+        "WINMM.dll"
+      ]
+    },
+    {
+      "path": "PlayCtrl/QSuperRender.dll",
+      "bytes": 2053120,
+      "sha256": "1e90b98d0f26d7fc1d011c8e29f0d2a934306652455cfab835292545c81e70ef",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll",
+        "OPENGL32.dll",
+        "Qt5Core.dll",
+        "Qt5Gui.dll",
+        "Qt5Quick.dll"
+      ]
+    },
+    {
+      "path": "PlayCtrl/SuperRender.dll",
+      "bytes": 2143232,
+      "sha256": "a07c94232f780ead7b48fbf71082b1d0e5681b2894f21ad94ff9d6a24d52d0b9",
+      "architecture": "x64",
+      "imports": [
+        "DDRAW.dll",
+        "GDI32.dll",
+        "gdiplus.dll",
+        "KERNEL32.dll",
+        "MSIMG32.dll",
+        "USER32.dll"
+      ]
+    },
+    {
+      "path": "PlayCtrl/YUVProcess.dll",
+      "bytes": 694272,
+      "sha256": "8e16a132f97992c76856570329230c21bd5820bf4c3b4336e9e73b4c4fe73a20",
+      "architecture": "x64",
+      "imports": [
+        "KERNEL32.dll"
+      ]
+    },
+    {
+      "path": "Qt5Core.dll",
+      "bytes": 6508688,
+      "sha256": "0c9951dae5aee223e9bdde93faa32846d6d038e6d3159c3b30d71fe4f8e7be5e",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "KERNEL32.dll",
+        "MPR.dll",
+        "MSVCP140.dll",
+        "NETAPI32.dll",
+        "ole32.dll",
+        "SHELL32.dll",
+        "USER32.dll",
+        "USERENV.dll",
+        "VCRUNTIME140.dll",
+        "VERSION.dll",
+        "WINMM.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "Qt5Gui.dll",
+      "bytes": 7001232,
+      "sha256": "2f17a86ad055becda1d0b4069ab6058227d32cc1da1aa9e26d5da00dd9baa634",
+      "architecture": "x64",
+      "imports": [
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "d3d11.dll",
+        "dxgi.dll",
+        "GDI32.dll",
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "ole32.dll",
+        "Qt5Core.dll",
+        "USER32.dll",
+        "VCRUNTIME140.dll"
+      ]
+    },
+    {
+      "path": "Qt5Network.dll",
+      "bytes": 1393808,
+      "sha256": "6714b065478c95f8d83a7ba751d2f05fe00804d259ff647d5337afa335821b3b",
+      "architecture": "x64",
+      "imports": [
+        "ADVAPI32.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "CRYPT32.dll",
+        "DNSAPI.dll",
+        "IPHLPAPI.DLL",
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "ole32.dll",
+        "Qt5Core.dll",
+        "VCRUNTIME140.dll",
+        "WS2_32.dll"
+      ]
+    },
+    {
+      "path": "Qt5Qml.dll",
+      "bytes": 3673232,
+      "sha256": "3d2e4b911a7bfd9417cad9cc293b09e1ea4d70a9def1f7d82b506e8a8f8989e9",
+      "architecture": "x64",
+      "imports": [
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "Qt5Core.dll",
+        "Qt5Network.dll",
+        "SHELL32.dll",
+        "VCRUNTIME140.dll"
+      ]
+    },
+    {
+      "path": "Qt5Quick.dll",
+      "bytes": 4229264,
+      "sha256": "cc8c1651e3468de72d383970f1a2d2016db85187b234a20bdbd62a84b7324625",
+      "architecture": "x64",
+      "imports": [
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "KERNEL32.dll",
+        "MSVCP140.dll",
+        "Qt5Core.dll",
+        "Qt5Gui.dll",
+        "Qt5Network.dll",
+        "Qt5Qml.dll",
+        "Qt5QmlModels.dll",
+        "USER32.dll",
+        "VCRUNTIME140.dll"
+      ]
+    },
+    {
+      "path": "vcruntime140.dll",
+      "bytes": 87888,
+      "sha256": "d89c7b863fc1ac3a179d45d5fe1b9fd35fb6fbd45171ca68d0d68ab1c1ad04fb",
+      "architecture": "x64",
+      "imports": [
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "KERNEL32.dll"
+      ]
+    }
+  ]
+}

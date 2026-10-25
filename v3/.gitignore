@@ -1,0 +1,14 @@
+node_modules/
+.local/
+.env
+data/
+reports/
+*.log
+__pycache__/
+*.pyc
+.env.*
+!.env.example
+*.dpapi
+*.vault
+*.tmp
+*.har

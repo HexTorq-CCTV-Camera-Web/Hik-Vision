@@ -1,0 +1,18 @@
+{
+  "name": "hikvision-saas-v3",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "start": "node server.mjs",
+    "setup:local": "node tools/setup-local.mjs",
+    "test:db": "node --test test/postgres.test.mjs test/server.test.mjs"
+  },
+  "dependencies": {
+    "pg": "^8.23.1"
+  }
+}

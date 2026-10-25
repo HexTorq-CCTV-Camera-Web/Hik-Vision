@@ -1,0 +1,15 @@
+{
+  "name": "hikvision-windows-v2",
+  "version": "2.1.0-alpha.1",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.9" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "test:audio": "python native/test_audio.py",
+    "test:video": "python native/test_smooth.py",
+    "verify:playback": "node --env-file-if-exists=.env tools/verify-desktop.mjs",
+    "check": "node --check server.mjs && node --check lib/vault.mjs && node --check lib/accounts.mjs && node --check public/app.mjs && node --check public/auth.mjs"
+  }
+}

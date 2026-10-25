@@ -1,0 +1,17 @@
+node_modules/
+.env
+.env.*
+!.env.example
+captures/
+*.log
+__pycache__/
+data/
+log/
+logs/
+*.pyc
+*.vault
+*.dpapi
+*.har
+*.tmp
+*.key
+*.pem

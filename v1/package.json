@@ -1,0 +1,13 @@
+{
+  "name": "hikvision-viewer-v1",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.9" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "test:audio": "python native/test_audio.py",
+    "check": "node --check server.mjs && node --check lib/browser-session.mjs && node --check lib/hik-connect.mjs && node --check lib/live.mjs && node --check public/app.mjs && node --check public/api.mjs && node --check public/audio.mjs"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "hikvision-linux-pilot",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "test:portable": "node --test test/adaptive.test.mjs test/audio.test.mjs test/connection-feedback.test.mjs test/desktop-sdk.test.mjs test/personal-login.test.mjs test/previews.test.mjs test/provider-recovery.test.mjs test/recordings.test.mjs test/rotation.test.mjs test/smooth.test.mjs test/talk.test.mjs test/viewer.test.mjs"
+  }
+}

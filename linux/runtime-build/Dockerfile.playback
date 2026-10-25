@@ -1,0 +1,6 @@
+FROM mohan-cam-wine-test:local
+USER root
+RUN apt-get update && apt-get install -y --no-install-recommends python3-venv && rm -rf /var/lib/apt/lists/*
+RUN python3 -m venv /opt/wheel-tools && /opt/wheel-tools/bin/pip download --disable-pip-version-check --no-deps --only-binary=:all: --platform win_amd64 --python-version 311 --abi cp311 av==18.1.0 Pillow==12.3.0 -d /tmp/wheels
+RUN /opt/wheel-tools/bin/python -c "import pathlib,zipfile; target=pathlib.Path('/opt/windows-python/Lib/site-packages'); target.mkdir(parents=True,exist_ok=True); [zipfile.ZipFile(p).extractall(target) for p in pathlib.Path('/tmp/wheels').glob('*.whl')]" && printf 'python311.zip\n.\nLib/site-packages\nimport site\n' > /opt/windows-python/python311._pth && rm -rf /tmp/wheels /opt/wheel-tools
+USER 1006:1006
